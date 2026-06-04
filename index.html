@@ -3,37 +3,318 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome</title>
+    <title>For My Princess Paroo ❤️🎀</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        * {
             margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #667eea 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             padding: 20px;
-            background-color: #f5f5f5;
         }
         .container {
-            max-width: 800px;
-            margin: 0 auto;
-            background-color: white;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            background: white;
+            max-width: 600px;
+            width: 100%;
+            border-radius: 25px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+            overflow: hidden;
         }
-        h1 {
-            color: #333;
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 40px 20px;
+            text-align: center;
+            color: white;
+        }
+        .heart {
+            font-size: 70px;
+            animation: beat 1s infinite;
+        }
+        @keyframes beat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.15); }
+        }
+        .title {
+            font-size: 32px;
+            margin: 10px 0;
+            font-weight: bold;
+        }
+        .subtitle {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+        .songs {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            padding: 20px;
+            background: #f5f3ff;
+            flex-wrap: wrap;
+        }
+        .song-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 25px;
+            font-size: 14px;
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
+        .song-btn:hover {
+            transform: scale(1.05);
+        }
+        .photos {
+            padding: 30px;
+            background: #ede9fe;
+        }
+        .slideshow {
+            position: relative;
+            width: 100%;
+            height: 350px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        .slide.active {
+            opacity: 1;
+        }
+        .dots {
+            text-align: center;
+            margin-top: 15px;
+        }
+        .dot {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #ccc;
+            margin: 0 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .dot.active {
+            background: #764ba2;
+        }
+        .message-section {
+            padding: 30px;
             text-align: center;
         }
-        p {
-            color: #666;
-            line-height: 1.6;
+        .message {
+            font-size: 16px;
+            line-height: 1.9;
+            color: #444;
+            font-style: italic;
+        }
+        .special-date {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px;
+            border-radius: 15px;
+            margin: 20px;
+            text-align: center;
+        }
+        .special-date h3 {
+            margin-bottom: 10px;
+        }
+        .footer {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            text-align: center;
+            color: white;
+            font-size: 16px;
+        }
+        .footer span {
+            font-size: 24px;
+        }
+        
+        /* Apology Buttons */
+        .apology-section {
+            padding: 30px;
+            background: #f3e8ff;
+            text-align: center;
+        }
+        .apology-section h3 {
+            color: #764ba2;
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+        .buttons-container {
+            position: relative;
+            height: 120px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+        .apology-btn {
+            padding: 15px 35px;
+            border: none;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            position: absolute;
+        }
+        .yes-btn {
+            background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+            color: white;
+        }
+        .no-btn {
+            background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+            color: white;
+        }
+        .apology-btn:hover {
+            transform: scale(1.1);
+        }
+        .success-message {
+            display: none;
+            background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Welcome to My Website</h1>
-        <p>This is a basic HTML file created for your website repository.</p>
-        <p>Feel free to customize this content to match your needs.</p>
+        <div class="header">
+            <div class="heart">❤️</div>
+            <div class="title">For My Princess Paroo</div>
+            <div class="subtitle">🎀 My Everything 🎀</div>
+        </div>
+        
+        <div class="songs">
+            <a class="song-btn" href="https://drive.google.com/uc?export=download&id=1G530azt6xJ_NU0UzU6MBp_xeoqIUYMII" download>
+                🎵 Song 1
+            </a>
+            <a class="song-btn" href="https://drive.google.com/uc?export=download&id=1oNZE0jRmJLNaUBmsDFdxyPHBtQwD7Rth" download>
+                🎵 Song 2
+            </a>
+        </div>
+        
+        <div class="photos">
+            <div class="slideshow">
+                <img src="https://drive.google.com/uc?export=download&id=1o7OsFWXEXeyZ4NJIYPYQtFoUvymvY9uI" class="slide active" alt="Photo 1">
+                <img src="https://drive.google.com/uc?export=download&id=1xOMxNlX7mTURZ9Va74C_pNiKEYmdYg3H" class="slide" alt="Photo 2">
+                <img src="https://drive.google.com/uc?export=download&id=1Q7K2mKvZmNwel93ZGWXsXONoqTaxqoZZ" class="slide" alt="Photo 3">
+            </div>
+            <div class="dots">
+                <span class="dot active" onclick="changeSlide(0)"></span>
+                <span class="dot" onclick="changeSlide(1)"></span>
+                <span class="dot" onclick="changeSlide(2)"></span>
+            </div>
+        </div>
+        
+        <div class="message-section">
+            <p class="message">
+                Heyyy My Babyy,<br><br>
+                My Paroo... My Princess...<br><br>
+                I'm sorry, I know sometimes I make silly mistakes, but I'm trying my best not to do that anymore. That's why I want to make you smile every time. I want to make you feel loved every time.<br><br>
+                I love you, Paroo, my babyy! 🎀<br><br>
+                I'm really sorry for everything I did. I just want you to hold me in your arms. I will always be here for you - to cry on, to fight, to talk, to listen to all your stories, to lean on, to trust someone.<br><br>
+                I love you so much, my babyy! ❤️🎀🎀<br>
+                I love you so much, my princess! 🎀🌹❣️<br><br>
+                <b>Do you remember the first day we met?</b> 16 July 2025 - The day I first saw you, my heart kept saying, "That's the one!"<br><br>
+                <b>My favourite moment?</b> 20 August 2025 when you received the chocolate, Snowy, and the sorry card. I loved your reaction!<br><br>
+                <b>15 October</b> - The day I gave you the strawberry lamp. The day I realized... Yes, you're a babyy. Only my babyy. I want to make you happy always.<br><br>
+                I truly love your behaviour. When you tease me, it makes me smile. 🥹❤️<br><br>
+                Paroo, I know I'm not perfect, but I want to be a good man for you. Please forgive me, my babyy.<br><br>
+                I want to hold your hand forever. 🌹🎀
+            </p>
+        </div>
+        
+        <div class="special-date">
+            <h3>❤️ Our Journey ❤️</h3>
+            <p>16 July 2025 - First Met</p>
+            <p>20 August 2025 - Special Day</p>
+            <p>15 October 2025 - Strawberry Lamp</p>
+        </div>
+        
+        <div class="apology-section">
+            <h3>Do You Accept My Apology? 🥺</h3>
+            <div class="buttons-container" id="buttonsContainer">
+                <button class="apology-btn yes-btn" onclick="accepted()">✅ Accepted</button>
+                <button class="apology-btn no-btn" id="noBtn" onmouseover="moveButton()" onclick="moveButton()">❌ Not Accepted</button>
+            </div>
+            <div class="success-message" id="successMessage">
+                🎉 YAYYYY! I love you so much, Paroo! ❤️🎀🎉<br>
+                You're the best! 🌹💕
+            </div>
+        </div>
+        
+        <div class="footer">
+            <span>💜</span> Made with love for you <span>💜</span>
+        </div>
     </div>
+    
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.dot');
+        
+        function changeSlide(index) {
+            slides[currentSlide].classList.remove('active');
+            dots[currentSlide].classList.remove('active');
+            
+            currentSlide = index;
+            
+            slides[currentSlide].classList.add('active');
+            dots[currentSlide].classList.add('active');
+        }
+        
+        setInterval(() => {
+            slides[currentSlide].classList.remove('active');
+            dots[currentSlide].classList.remove('active');
+            
+            currentSlide = (currentSlide + 1) % slides.length;
+            
+            slides[currentSlide].classList.add('active');
+            dots[currentSlide].classList.add('active');
+        }, 3000);
+        
+        // Moving button script
+        function moveButton() {
+            const noBtn = document.getElementById('noBtn');
+            const container = document.getElementById('buttonsContainer');
+            const containerWidth = container.offsetWidth;
+            const containerHeight = container.offsetHeight;
+            
+            // Random positions
+            const randomX = Math.random() * (containerWidth - 100);
+            const randomY = Math.random() * (containerHeight - 50);
+            
+            noBtn.style.left = randomX + 'px';
+            noBtn.style.top = randomY + 'px';
+            noBtn.style.position = 'absolute';
+        }
+        
+        function accepted() {
+            document.getElementById('successMessage').style.display = 'block';
+            document.getElementById('buttonsContainer').style.display = 'none';
+        }
+    </script>
 </body>
 </html>
